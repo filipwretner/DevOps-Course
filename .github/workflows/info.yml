@@ -13,7 +13,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Display branch and commit information
+      - name: Print commit information
         run: |
           echo "Commit hash: ${{ github.sha }}"
           echo "Branch: ${{ github.ref_name }}"
