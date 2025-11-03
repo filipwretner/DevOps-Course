@@ -1,1 +1,1 @@
-console.log('Hellow World');
+console.log('Now testing full workflow CI setup');
