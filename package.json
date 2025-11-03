@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Running tests...\" && exit 0",
     "build": "echo \"Building project...\" && exit 0",
-    "lint": "echo \"Linting code...\" && exit 0"
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/filipwretner/DevOps-Course/issues"
   },
-  "homepage": "https://github.com/filipwretner/DevOps-Course#readme"
+  "homepage": "https://github.com/filipwretner/DevOps-Course#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
+    "typescript-eslint": "^8.46.2"
+  }
 }
