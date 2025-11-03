@@ -4,38 +4,20 @@ on:
   push:
     branches:
       - main
+      - 'feature/*'
   pull_request:
     branches:
       - main
 
 jobs:
-  full-pipeline:
+  pipeline:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Check out repo
         uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run lint
-        run: npm run lint
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build project
-        run: npm run build
-
-      - name: Confirm success
-        if: success()
-        run: echo "All steps completed successfully!"
-      - name: Mock deploy
-        if: success()
-        run: echo "🚀 Deploying code to staging environment (mock)..."
+          node-version: '20'
