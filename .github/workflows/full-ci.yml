@@ -36,3 +36,6 @@ jobs:
       - name: Confirm success
         if: success()
         run: echo "All steps completed successfully!"
+      - name: Mock deploy
+        if: success()
+        run: echo "🚀 Deploying code to staging environment (mock)..."
