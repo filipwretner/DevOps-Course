@@ -26,3 +26,9 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Print info about branch and commit
+        run: |
+          echo "Running on branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Triggered by: ${{ github.actor }}"
