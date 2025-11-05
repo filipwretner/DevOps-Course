@@ -13,8 +13,17 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Build docker image
+      - name: Build docker image for service 1
         run: docker build -t my-app .
 
-      - name: Run tests in docker container
+      - name: Run tests in docker container for service 1
         run: docker run my-app npm test
+
+      - name: Build Docker image for service-2
+        run: docker build -t ditt-användarnamn/service-2:latest ./service-2
+
+      - name: Run tests for service-2
+        run: |
+          cd service-2
+          npm install
+          npm test

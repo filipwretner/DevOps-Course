@@ -1,0 +1,32 @@
+{
+  "name": "devops-course",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
+    "build": "echo \"Building project...\" && exit 0",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipwretner/DevOps-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/filipwretner/DevOps-Course/issues"
+  },
+  "homepage": "https://github.com/filipwretner/DevOps-Course#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.5.0",
+    "jest": "^29.7.0",
+    "jiti": "^2.6.1",
+    "typescript-eslint": "^8.46.2"
+  }
+}
