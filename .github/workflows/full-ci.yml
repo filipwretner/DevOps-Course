@@ -21,3 +21,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build project
+        if: github.ref_name == 'main'
+        run: npm run build
+
+      - name: Mock deployment
+        if: github.ref_name == 'main'
+        run: echo "Deploying application... (mock)"
+
+      - name: Confirm success
+        if: success()
+        run: |
+          echo "Pipeline done for branch: ${{ github.ref_name }}"
