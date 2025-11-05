@@ -1,26 +1,32 @@
-name: Docker CI
+name: Docker CI - multi service
 
 on:
   push:
-    branches:
-      - dev
+    branches: [main, dev]
 
 jobs:
-  docker-build:
+  build-service-1:
+    name: Build & Test Service 1
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Build docker image for service 1
-        run: docker build -t my-app .
+      - name: Build Docker image for service-1
+        run: docker build -t DevOps/service-1:latest .
 
-      - name: Run tests in docker container for service 1
-        run: docker run my-app npm test
+      - name: Run tests for service-1
+        run: |
+          npm install
+          npm test
+
+  build-service-2:
+    name: Build & Test Service 2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Build Docker image for service-2
-        run: docker build -t ditt-användarnamn/service-2:latest ./service-2
+        run: docker build -t DevOps/service-2:latest ./service-2
 
       - name: Run tests for service-2
         run: |
